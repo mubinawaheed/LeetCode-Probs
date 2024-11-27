@@ -30,8 +30,3 @@ class Solution(object):
             res = i ^ res
         return res
     
-nums=[1,1,2,4,2]
-res=0
-for i in nums:
-    res = i ^ res
-print(res)
