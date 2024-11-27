@@ -6,6 +6,7 @@ class Solution(object):
 # The final sorted array should not be returned by the function, but instead be stored inside the array nums1. To accommodate this, nums1 has a length of m + n, where the first m elements denote the elements that should be merged, and the last n elements are set to 0 and should be ignored. nums2 has a length of n.
 
     def merge(self, nums1, m, nums2, n):
+        
         if n == 0 and m > 0 and nums1[-1] != 0:
             return
         if m == 0:
