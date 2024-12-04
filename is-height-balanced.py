@@ -58,3 +58,4 @@ class Solution:
         return c[0]
 
 
+# Explanation: The first checks for every node that if its height balanced or not. it calls DFS on every node . One node DFS = O(n) . So total time complexity is O(n2) for 1st solution. In the second solution i used a bottom up approach. During dfs only we dont just return depth of height but also check if the subtree is balanced. Therefore, we dont need to call dfs for every node. We'll just call DFS for root node and during DFS we are going to figure out if there is any subtree that is not balanced. Therefore, time complexity is O(n).
