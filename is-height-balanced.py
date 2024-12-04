@@ -10,7 +10,7 @@ class TreeNode:
         self.right = right
         
 class Solution:
-    def isBalanced(self, root: Optional[TreeNode]) -> bool:
+    def isBalanced(self, root: Optional[TreeNode]) -> bool: # Time Complexity O(n)
         if (root is None ):
             return True
             
@@ -23,9 +23,8 @@ class Solution:
                 lh = getHeight(node.left)
             if(node.right is not None):
                 rh = getHeight(node.right)
-            if(lh>rh):
-                return lh+1
-            return rh+1
+
+            return 1 + max(rh, lh)
         
         r = getHeight(root.right)
         l = getHeight(root.left)
@@ -41,4 +40,21 @@ class Solution:
             result2 = self.isBalanced(root.right)
 
         return result1 and result2
+    
+    def isBalancedOptimized(self, root):  # Time complexity O(n2)
+        def getHeight(node):
+            if(node is None):
+                return [True, 0]
+            lh = getHeight(node.left)
+            if(not lh[0]):
+                return [False, lh[0]]
+            
+            rh = getHeight(node.right)
+                
+            res= (lh[0] and rh[0] )and (rh[1]-lh[1] ==0 or abs(rh[1]-lh[1]) ==1)
+            
+            return [res, 1 + max(rh[1], lh[1]) ]
+        c= getHeight(root)
+        return c[0]
+
 
