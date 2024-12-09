@@ -23,3 +23,16 @@ class Solution:
             return all(ele == res[0] for ele in res)
 
         return traverse(root)
+    
+    def isUnivalTreeOptimized(self, root: Optional[TreeNode]) -> bool:
+        def traverse(root):
+            if(root is None):
+                return True
+            if(root.right is not None and root.right.val != root.val):
+                return False
+            if(root.left is not None and root.left.val != root.val):
+                return False
+
+            return traverse(root.left) and   traverse(root.right)
+
+        return traverse(root)
