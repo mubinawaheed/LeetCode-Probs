@@ -14,6 +14,9 @@ class Solution:
                 count+=1
             else:
                 i+=1
-        for i in range(count):
-            nums.append(0)
+        nums.extend([0] * count)
+
+s = Solution()
+nums=[0,0,1]
+s.moveZeroes(nums)
         
