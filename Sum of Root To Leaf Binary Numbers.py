@@ -17,15 +17,14 @@ class Solution:
                 return
             v=f"{val}{root.val}"
             if(root.left is None and root.right is None):
-                res.append(v)
+                res.append(int(v, 2))
             dfs(root.left, v)
             k=f"{val}{root.val}"
             dfs(root.right,k)
         
         dfs(root, '')
-        decimal_list = [int(binary, 2) for binary in res]
 
-        return sum(decimal_list)
+        return sum(res)
 
             
 
