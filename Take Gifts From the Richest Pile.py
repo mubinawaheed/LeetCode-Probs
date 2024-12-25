@@ -11,7 +11,7 @@ class Solution:
             gifts[index] = floor(sqrt(maxV))
         return sum(gifts)
     
-    #Using heap. List -> Heap takes O(n) time
+    #Using heap. List -> Heap takes O(n) time. Also, Extracting the maximum value now takes 𝑂(logn) instead of 𝑂(𝑛) time.
     def pickGiftsOptimized(self, gifts: List[int], k: int) -> int:
         gifts = [-gift for gift in gifts]
         heapq.heapify(gifts)
