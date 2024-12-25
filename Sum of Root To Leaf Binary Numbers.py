@@ -15,12 +15,14 @@ class Solution:
         def dfs(root, val):
             if not root:
                 return
+            
             v=f"{val}{root.val}"
+            
             if(root.left is None and root.right is None):
                 res.append(int(v, 2))
+                
             dfs(root.left, v)
-            k=f"{val}{root.val}"
-            dfs(root.right,k)
+            dfs(root.right,v)
         
         dfs(root, '')
 
