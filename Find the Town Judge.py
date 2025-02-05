@@ -6,8 +6,6 @@ class Solution:
         s=defaultdict(list)
         for i in range(len(trust)):
             m,o=trust[i]
-            if m not in s:
-                s[m] = []
             s[m].append(o)
         
         for i in range(1, n+1):
