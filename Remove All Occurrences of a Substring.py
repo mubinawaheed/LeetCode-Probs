@@ -5,7 +5,6 @@ class Solution:
             s=s[0:a] + s[a+len(part):]    
         return s
 
-
 class Solution:
     def removeOccurrences(self, s: str, part: str) -> str:
         stack=[]
