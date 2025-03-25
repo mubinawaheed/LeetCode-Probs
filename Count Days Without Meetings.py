@@ -16,7 +16,8 @@ class Solution:
         #-----------my code-----------------#
         
         # meeting_days=[]
-
+        # meetings.sort()
+        # prev=-1
         # for s, e in meetings:
         #     if s<=prev:
         #         meeting_days[-1][1] = max(meeting_days[-1][1] ,e)
