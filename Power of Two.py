@@ -9,3 +9,18 @@ class Solution:
             return False
         return self.isPowerOfTwo(n // 2)
         
+from cmath import log
+
+
+class Solution:
+    def isPowerOfTwo(self, n: int) -> bool:
+        if n==1 or n==2:
+            return True
+        if n%2 != 0 or n<=0:
+            return False
+
+        x = log(abs(n)) / log(2)
+
+        if abs(x - round(x)) < 1e-9:
+            return True
+        return False
