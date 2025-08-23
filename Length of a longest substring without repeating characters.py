@@ -1,23 +1,16 @@
 class Solution:
-    @staticmethod
-    def lengthOfLongestSubstring( s: str) -> int:
-       
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        v=set()
+        res=0
         start=0
-        count=0
-        res=set()
-        ans=[]
+        end = len(s) -1
         for i in range(len(s)):
-            if s[i] not in res:
-                res.add(s[i])
-                count=max(count, len(res))
-            else:
-                ans.append(count)
-                while s[i] in res:
-                    res.remove(s[start])
-                    start+=1
-                res.add(s[i])
-        ans.append(count)
-        return max(ans)
+            while s[i] in v:
+                v.remove(s[start])
+                start +=1
+            v.add(s[i])
+            
+            res = max(res, i-start+1)
 
-ans=Solution.lengthOfLongestSubstring('pwwkew')
-print(ans)
+
+        return res 
